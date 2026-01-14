@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: vegaburger-db
+    restart: always
+    environment:
+      POSTGRES_DB: vegaburger
+      POSTGRES_USER: administrador
+      POSTGRES_PASSWORD: administrador
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
