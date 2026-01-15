@@ -8,12 +8,23 @@ import java.util.UUID;
 @Table(name = "producto")
 public class ProductoJPA {
     @Id
+    @Column(name = "id", nullable = false)
     private UUID id;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "descripcion")
+    private String descripcion;
+
+    @Column(name = "categoria_id")
+    private UUID categoriaId;
+
+    @Column(name = "precio")
     private BigDecimal precio;
 
+    @Column(name = "activo")
+    private boolean activo;
 
     public UUID getId() {
         return id;
@@ -31,6 +42,22 @@ public class ProductoJPA {
         this.nombre = nombre;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public UUID getCategoriaId() {
+        return categoriaId;
+    }
+
+    public void setCategoriaId(UUID categoriaId) {
+        this.categoriaId = categoriaId;
+    }
+
     public BigDecimal getPrecio() {
         return precio;
     }
@@ -39,8 +66,12 @@ public class ProductoJPA {
         this.precio = precio;
     }
 
+    public boolean getActivo() {
+        return activo;
     }
 
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }
 
