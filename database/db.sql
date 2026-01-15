@@ -4,15 +4,15 @@ CREATE DATABASE IF NOT EXISTS vegaburguer;
 \c vegaburguer;
 
 CREATE TABLE IF NOT EXISTS categoria (
-                                         id UUID PRIMARY KEY,
-                                         nombre VARCHAR(255) NOT NULL,
+    id UUID PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     activo BOOLEAN DEFAULT false
     );
 
 CREATE TABLE IF NOT EXISTS producto (
-                                        id UUID PRIMARY KEY,
-                                        nombre VARCHAR(255) NOT NULL,
+    id UUID PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     categoria_id UUID NOT NULL,
     precio DECIMAL(10, 2) NOT NULL,
