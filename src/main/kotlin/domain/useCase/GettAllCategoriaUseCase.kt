@@ -8,7 +8,7 @@ class GetAllCategoriaUseCase(
 ) {
     operator fun invoke(): List<CategoriaJPA> {
 
-        // Sevuelve lo que hay en la base de datos
+        // Devuelve lo que hay en la base de datos
         return repository.all()
     }
 }
