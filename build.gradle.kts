@@ -12,10 +12,12 @@ application {
 }
 
 dependencies {
-    implementation(libs.koin.ktor)
+    implementation("io.insert-koin:koin-ktor:3.5.0")
+    implementation("io.insert-koin:koin-core:3.5.0")
+
     implementation(libs.koin.logger.slf4j)
-    implementation(libs.ktor.server.call.logging)
     implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.call.logging)
     implementation(libs.ktor.server.host.common)
     implementation(libs.ktor.server.status.pages)
     implementation(libs.ktor.server.content.negotiation)
